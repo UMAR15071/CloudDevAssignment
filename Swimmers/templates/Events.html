@@ -1,0 +1,25 @@
+{%extends 'Base.html'%}
+
+{% block title %}
+    Select Event
+{% endblock %}
+
+{% block heading %}
+    Select an Event
+{% endblock %}
+
+<form action="url_for= event_name" method="POST"></form>
+    {% block content %}
+        <select name="name" id="name">
+            {% for event in events %}
+                <option>{{ event }}</option>
+            {% endfor %}
+        </select>
+            <br>
+            <br>
+    
+    {% endblock %}
+    {%block submit%}
+        <button type="submit">Submit!</button>
+    {%endblock%}
+</form>
