@@ -1,4 +1,4 @@
-{%extends 'Base.html'%}
+{% extends 'Base.html' %}
 
 {% block title %}
     Select Event
@@ -8,18 +8,18 @@
     Select an Event
 {% endblock %}
 
-<form action="url_for= event_name" method="POST"></form>
-    {% block content %}
-        <select name="name" id="name">
+
+{% block content %}
+    <form action="{{ url_for('show_graphs') }}" method="POST">
+        <label for="event">Select an Event:</label>
+        <select name="event" id="event">
             {% for event in events %}
                 <option>{{ event }}</option>
             {% endfor %}
         </select>
-            <br>
-            <br>
-    
-    {% endblock %}
-    {%block submit%}
+        <br>
+        <br>
         <button type="submit">Submit!</button>
-    {%endblock%}
-</form>
+    </form>
+{% endblock %}
+

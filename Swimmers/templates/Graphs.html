@@ -1,0 +1,23 @@
+{% extends 'Base.html' %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block heading %}
+    {{ title }}
+{% endblock %}
+
+
+
+{% block content %}
+    {% for t, c in tc %}
+        <svg height="30" width="{{ c }}">
+            <rect height="30" width="{{ c }}" style="fill:rgb(0,0,255);" />
+        </svg>
+        {{ t }}
+        <br>
+    {% endfor %}
+
+    <p>Average: {{ average }}</p>
+{% endblock %}
