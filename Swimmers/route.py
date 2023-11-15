@@ -13,10 +13,11 @@ for file in files:
     data = []
     data = get_swimmers_data(file)
     names.add(data[0])
-
+names = sorted(names)
 
 @app.route("/")
 def name_page():
+    
     return render_template("Names.html", names=names)
 
 
