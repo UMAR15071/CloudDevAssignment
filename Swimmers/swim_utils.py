@@ -2,8 +2,8 @@ from statistics import mean
 
 FOLDER = "swimdata/"
 
-def convert2hundreths(timestring):
 
+def convert2hundreths(timestring):
     """Given function convert given string to int using split() and int() methods"""
     if ":" in timestring:
         mins, rest = timestring.split(":")
@@ -13,11 +13,13 @@ def convert2hundreths(timestring):
         secs, hundreths = timestring.split(".")
     return int(hundreths) + (int(secs) * 100) + (int(mins) * 60 * 100)
 
+
 def build_time_string(num_time):
     secs, hundreths = f"{(num_time / 100):.2f}".split(".")
     mins = int(secs) // 60
-    seconds = int(secs) - mins*60
+    seconds = int(secs) - mins * 60
     return f"{mins}:{seconds}.{hundreths}"
+
 
 def get_swimmers_data(filename):
     name, age, distance, stroke = filename.removesuffix(".txt").split("-")
